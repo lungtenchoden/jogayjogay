@@ -351,3 +351,4 @@ def parking_photo_path(zone_name):
         if os.path.exists(path):
             return path
     return os.path.join("images", "parking_default.jpg")
+
