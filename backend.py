@@ -88,3 +88,6 @@ def sign_in(email, password):
         return True, "Signed in."
     except Exception as e:
         return False, f"Login failed: {e}"
+
+
+    
