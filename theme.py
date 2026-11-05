@@ -24,3 +24,4 @@ FONT_BOLD   = ("Helvetica", 11, "bold")
 FONT_NORMAL = ("Helvetica", 10)
 FONT_SMALL  = ("Helvetica", 9)
 FONT_TINY   = ("Helvetica", 8, "bold")
+
