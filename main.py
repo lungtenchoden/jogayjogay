@@ -17,7 +17,7 @@ from pages import (login, dashboard, taxi_records, trip_records,
 class App:
     def __init__(self, root):
         self.root = root
-        self.root.title("Jogay Jogay - Bhutan Transport Authority")
+        self.root.title("Jogay Jogay - Bhutan Transport Authority.")
         self.root.geometry("1280x780")
         self.root.minsize(1100, 650)
         self.root.configure(bg=BG)
