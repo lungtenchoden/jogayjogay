@@ -45,8 +45,8 @@ class App:
 
     def logout(self):
         answer = messagebox.askyesno(
-            "Log out",
-            "Are you sure you want to log out?"
+            "Sign out",
+            "Are you sure you want to sign out?"
         )
         if answer:
             self.show_login()
