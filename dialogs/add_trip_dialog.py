@@ -110,7 +110,7 @@ class AddTripDialog(tk.Toplevel):
 
         if origin == destination:
             messagebox.showwarning("Invalid",
-                                   "Origin and destination can't be the same.")
+                                   "Origin and destination cannot be the same.")
             return
 
         if not trip_date:
@@ -129,7 +129,7 @@ class AddTripDialog(tk.Toplevel):
 
         if not num_trips.isdigit() or int(num_trips) <= 0:
             messagebox.showwarning("Invalid",
-                                   "Number of trips must be a positive number.")
+                                   "Number of trips should be a positive number.")
             self.num.focus_set()
             return
 
