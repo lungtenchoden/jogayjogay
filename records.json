@@ -1,0 +1,20 @@
+{
+  "taxi_records": [
+    [
+      "TX010",
+      "1232",
+      "Thimphu",
+      "Maruti Alto",
+      "2026-10-08",
+      "Active"
+    ]
+  ],
+  "trip_records": [
+    [
+      "Thimphu",
+      "Paro",
+      "2026-10-08",
+      "12321"
+    ]
+  ]
+}
