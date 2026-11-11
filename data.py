@@ -129,3 +129,4 @@ FLEET_SHARE = [
     ("Hatchback", 35, "#d9a441"),
     ("SUV",       23, "#7aa5cc"),
 ]
+

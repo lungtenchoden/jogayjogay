@@ -15,7 +15,7 @@ try:
         _client = create_client(SUPABASE_URL, SUPABASE_KEY)
         SUPABASE_ENABLED = True
 except Exception:
-    SUPABASE_ENABLED = False
+    SUPABASE_ENABLED = False 
 
 
 def _fetch(table_name, fallback):
@@ -88,3 +88,6 @@ def sign_in(email, password):
         return True, "Signed in."
     except Exception as e:
         return False, f"Login failed: {e}"
+
+
+    
