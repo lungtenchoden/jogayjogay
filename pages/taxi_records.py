@@ -1,6 +1,7 @@
 # pages/taxi_records.py
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, filedialog
+import csv
 from theme import *
 from widgets import (card, primary_button, secondary_button,
                      data_table, search_bar, Dropdown, scrollable_table)
@@ -32,10 +33,10 @@ def build(parent):
 
     primary_button(right, "+ Add record",
                    command=lambda: _open_add(page)).pack(side="left", padx=4)
+    
+    # The Export Button
     secondary_button(right, "Export CSV",
-                     command=lambda: messagebox.showinfo("Export",
-                                                         "Records exported to CSV.")
-                     ).pack(side="left", padx=4)
+                     command=lambda: _export_csv()).pack(side="left", padx=4)
 
     # ---------- search + filter ----------
     search_row = tk.Frame(c, bg=CARD)
@@ -85,5 +86,27 @@ def build(parent):
             refresh()
 
         AddTaxiDialog(parent_page.winfo_toplevel(), on_save=on_save)
+
+    def _export_csv():
+        rows = get_taxi_records()
+        
+        # Ask user where to save the file
+        filepath = filedialog.asksaveasfilename(
+            defaultextension=".csv",
+            filetypes=[("CSV Files", "*.csv")],
+            title="Save Taxi Records As"
+        )
+        if not filepath:
+            return # User cancelled
+
+        # Write the data to the CSV file
+        try:
+            with open(filepath, "w", newline="", encoding="utf-8") as f:
+                writer = csv.writer(f)
+                writer.writerow(["Taxi ID", "Plate Number", "Dzongkhag", "Vehicle Type", "Registration Date", "Status"])
+                writer.writerows(rows)
+            messagebox.showinfo("Success", f"Records exported successfully to:\\n{filepath}")
+        except Exception as e:
+            messagebox.showerror("Error", f"Could not save file:\\n{e}")
 
     refresh()
