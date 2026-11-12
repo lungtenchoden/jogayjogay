@@ -161,3 +161,4 @@ with gr.Blocks(title="Jogay Jogay · Public Lookup", theme=gr.themes.Soft()) as 
 
 if __name__ == "__main__":
     demo.launch()
+    

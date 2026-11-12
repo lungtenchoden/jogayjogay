@@ -352,3 +352,4 @@ def parking_photo_path(zone_name):
             return path
     return os.path.join("images", "parking_default.jpg")
 
+

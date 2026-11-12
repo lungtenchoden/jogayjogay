@@ -136,7 +136,7 @@ class AddTaxiDialog(tk.Toplevel):
     # ---------- photo ----------
     def _choose_photo(self):
         path = filedialog.askopenfilename(
-            title="Choose vehicle photo",
+            title="Choose  a vehicle photo",
             filetypes=[("Images", "*.png *.jpg *.jpeg *.gif"),
                        ("All files", "*.*")])
         if not path:
@@ -156,7 +156,7 @@ class AddTaxiDialog(tk.Toplevel):
             self.preview_img.image = tk_img
             self._preview_img = tk_img
         except ImportError:
-            self.preview_img.configure(text="(Pillow not installed)", image="")
+            self.preview_img.configure(text="(Pillow  is not installed)", image="")
         except Exception:
             self.preview_img.configure(text="(can't preview)", image="")
 
